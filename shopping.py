@@ -95,15 +95,11 @@ st.write("Średnia cena zakupów dla mężczyzn:", avg_male)
 avg_famele = sum(female_data["Purchase Amount (USD)"]) / len(female_data["Purchase Amount (USD)"])
 st.write("Średnia cena zakupów dla kobiet:", avg_famele)
 
-avg = [avg_male,avg_famele]
+y = np.array([avg_male,avg_famele])
+x = np.array(["mężczyzna","kobieta"])
+bar_colors = ['tab:red', 'tab:blue']
 
-fig, ax = plt.subplots()
+plt.bar(x,y,color=bar_colors)
 
-bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
-avg.plot(kind="bar", ax=ax)
-
-ax.set_xlabel("Płeć")
-ax.set_ylabel("Cena średnia")
-
-st.pyplot(fig)
+st.pyplot(plt)
