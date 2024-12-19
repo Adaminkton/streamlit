@@ -99,7 +99,7 @@ y = np.array([avg_male,avg_famele])
 x = np.array(["mężczyzna","kobieta"])
 bar_colors = ['tab:red', 'tab:blue']
 
-plt.bar(x,y,color=bar_colors)
+fix, ax.bar(x,y,color=bar_colors)
 
 
-st.pyplot(plt)
+st.pyplot(fig)
