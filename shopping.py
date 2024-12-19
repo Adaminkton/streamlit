@@ -86,6 +86,6 @@ st.pyplot(fig)
 # Wykres 6: Ceny zakupów według płci
 st.write("### Ceny zakupów według płci")
 
-male_data = data[ (data["Gender"].str.contains("Male"))]
+male_data = filtered_data[ (filtered_data["Gender"].str.contains("Male"))]
 
 st.write(male_data)
