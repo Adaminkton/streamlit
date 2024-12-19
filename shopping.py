@@ -59,7 +59,7 @@ st.pyplot(fig)
 # Wykres 4: Liczba zakupów wg nazwy produktu
 st.write("### Liczba kupionych prodkutów według nazwy")
 counts = filtered_data["Item Purchased"].value_counts()
-st.write("counts: ", counts)
+st.write(counts)
 fig, ax = plt.subplots()
 def make_autopct(counts):
     def my_autopct(pct):
@@ -67,5 +67,5 @@ def make_autopct(counts):
         val = int(round(pct*total/100.0))
         return '{p:.2f}%  ({v:d})'.format(p=pct,v=val)
     return my_autopct
-counts.plot(kind="pie", ax=ax, autopct=make_autopct(counts))
+counts.plot(kind="pie", autopct=make_autopct(counts))
 st.pyplot(fig)
