@@ -89,22 +89,20 @@ st.write("### Ceny zakupów według płci")
 
 male_data = filtered_data[ (filtered_data["Gender"].str.contains("Male"))]
 female_data = filtered_data[ (filtered_data["Gender"].str.contains("Female"))]
+avg_male = sum(male_data["Purchase Amount (USD)"]) / len(male_data["Purchase Amount (USD)"])
+st.write("Średnia cena zakupów dla męszczyzn:", avg_male)
 
-
-# Use a constant bin width to make the two histograms easier to compare visually
-bin_width = 0.25
-bins = np.arange(np.min([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]]),
-                    np.max([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]]) + bin_width, bin_width)
+avg_male = sum(female_data["Purchase Amount (USD)"]) / len(female_data["Purchase Amount (USD)"])
+st.write("Średnia cena zakupów dla kobiet:", avg_famele)
 
 fig, ax = plt.subplots()
 
-# Plot the first histogram
-ax.hist(dataset1["Purchase Amount (USD)"], bins=bins, label="Dataset 1")
+bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
-# Plot the second histogram
-# (notice the negative weights, which flip the histogram upside down)
-ax.hist(dataset2["Purchase Amount (USD)"], weights=-np.ones_like(dataset2["Purchase Amount (USD)"]), bins=bins, label="Dataset 2")
-ax.axhline(0, color="k")
-ax.legend()
+ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
+
+ax.set_ylabel('fruit supply')
+ax.set_title('Fruit supply by kind and color')
+ax.legend(title='Fruit color')
 
 st.pyplot(fig)
