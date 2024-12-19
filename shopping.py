@@ -61,7 +61,7 @@ st.write("### Liczba kupionych prodkutów według nazwy")
 counts = filtered_data["Item Purchased"].value_counts()
 st.write("counts: ", counts)
 fig, ax = plt.subplots()
-labels = 'Frogs', 'Hogs', 'Dogs', 'Logs'
+labels = filtered_data["Item Purchased"].unique()
 #ax.pie(counts, labels=filtered_data["Item Purchased"].unique())
 ax.pie(counts, labels=labels, autopct='%1.1f%')
 
