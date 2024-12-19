@@ -64,3 +64,6 @@ fig, ax = plt.subplots()
 #ax.pie(counts, labels=filtered_data["Item Purchased"].unique())
 counts.plot(kind="bar", ax=ax)
 
+ax.set_xlabel("Kategoria")
+ax.set_ylabel("Liczba zakupów")
+st.pyplot(fig)
