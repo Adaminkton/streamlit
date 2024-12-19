@@ -62,5 +62,5 @@ counts = filtered_data["Item Purchased"].value_counts()
 st.write("counts: ", counts)
 fig, ax = plt.subplots()
 #ax.pie(counts, labels=filtered_data["Item Purchased"].unique())
-counts.pie()
+counts.plot(kind="bar", ax=ax)
 
