@@ -95,11 +95,13 @@ st.write("Średnia cena zakupów dla mężczyzn:", avg_male)
 avg_famele = sum(female_data["Purchase Amount (USD)"]) / len(female_data["Purchase Amount (USD)"])
 st.write("Średnia cena zakupów dla kobiet:", avg_famele)
 
+avg = [avg_male,avg_famele]
+
 fig, ax = plt.subplots()
 
 bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
-ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
+avg.plot(kind="bar"
 
 ax.set_ylabel('fruit supply')
 ax.set_title('Fruit supply by kind and color')
