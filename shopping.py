@@ -14,8 +14,8 @@ st.title("Shopping Trends Dashboard")
 st.sidebar.title("Opcje analizy")
 
 # Filtry
-age_filter = st.sidebar.slider("Wiek klienta", int(data["Age"].min()), int(data["Age"].max()), (18, 60))
-price_filter = st.sidebar.slider("Cena", int(data["Purchase Amount (USD)"].min()), int(data["Purchase Amount (USD)"].max()), (0, 20))
+age_filter = st.sidebar.slider("Wiek klienta", int(data["Age"].min()), int(data["Age"].max()), (18, 70))
+price_filter = st.sidebar.slider("Cena", int(data["Purchase Amount (USD)"].min()), int(data["Purchase Amount (USD)"].max()), (0, 100))
 gender_filter = st.sidebar.multiselect("Płeć", data["Gender"].unique(), data["Gender"].unique())
 category_filter = st.sidebar.multiselect("Kategorie produktów", data["Category"].unique(), data["Category"].unique())
 name_filter = st.sidebar.multiselect("Nazwa produktów", data["Item Purchased"].unique(), data["Item Purchased"].unique())
@@ -82,3 +82,10 @@ counts_genders = filtered_data["Gender"].value_counts()
 fig, ax = plt.subplots()
 counts_genders.plot(kind="pie", autopct='%1.1f%%')
 st.pyplot(fig)
+
+# Wykres 6: Ceny zakupów według płci
+st.write("### Ceny zakupów według płci")
+
+male_data = data[ (data["Gender"].str.contains("Male"))]
+
+st.write(male_data)
