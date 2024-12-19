@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from matplotlib.patches import ConnectionPatch
 
 # Wczytaj dane
 @st.cache_data
@@ -72,7 +73,7 @@ counts.plot(kind="pie", autopct=make_autopct(counts))
 st.pyplot(fig)
 
 # Wykres 5: Liczba zakupów według płci:
-from matplotlib.patches import ConnectionPatch
+
 
 # make figure and assign axis objects
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(9, 5))
