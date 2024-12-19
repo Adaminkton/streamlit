@@ -92,7 +92,7 @@ female_data = filtered_data[ (filtered_data["Gender"].str.contains("Female"))]
 
 # Use a constant bin width to make the two histograms easier to compare visually
 bin_width = 0.25
-bins = np.arange(np.min([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]),
+bins = np.arange(np.min([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]]),
                     np.max([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]] + bin_width, bin_width)
 
 fig, ax = plt.subplots()
