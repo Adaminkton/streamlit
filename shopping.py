@@ -87,5 +87,23 @@ st.pyplot(fig)
 st.write("### Ceny zakupów według płci")
 
 male_data = filtered_data[ (filtered_data["Gender"].str.contains("Male"))]
+female_data = filtered_data[ (filtered_data["Gender"].str.contains("Female"))]
 
-st.write(male_data)
+
+# Use a constant bin width to make the two histograms easier to compare visually
+bin_width = 0.25
+bins = np.arange(np.min([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]),
+                    np.max([male_data["Purchase Amount (USD)"], female_data["Purchase Amount (USD)"]) + bin_width, bin_width)
+
+fig, ax = plt.subplots()
+
+# Plot the first histogram
+ax.hist(dataset1["Purchase Amount (USD)"], bins=bins, label="Dataset 1")
+
+# Plot the second histogram
+# (notice the negative weights, which flip the histogram upside down)
+ax.hist(dataset2["Purchase Amount (USD)"], weights=-np.ones_like(dataset2["Purchase Amount (USD)"]), bins=bins, label="Dataset 2")
+ax.axhline(0, color="k")
+ax.legend()
+
+st.pyplot(fig)
