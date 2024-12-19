@@ -61,7 +61,7 @@ st.write("### Liczba kupionych prodkutów według nazwy")
 counts_names = filtered_data["Item Purchased"].value_counts()
 st.write(counts_names)
 fig, ax = plt.subplots()
-def make_autopct(counts):
+def make_autopct(counts_names):
     def my_autopct(pct):
         total = sum(counts_names)
         val = int(round(pct*total/100.0))
