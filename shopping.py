@@ -15,13 +15,16 @@ st.sidebar.title("Opcje analizy")
 
 # Filtry
 age_filter = st.sidebar.slider("Wiek klienta", int(data["Age"].min()), int(data["Age"].max()), (18, 60))
+price_filter = st.sidebar.slider("Cena", int(data["Purchase Ammount (USD)"].min()), int(data["Purchase Ammount (USD)"].max()), (0, 20))
 gender_filter = st.sidebar.multiselect("Płeć", data["Gender"].unique(), data["Gender"].unique())
-category_filter = st.sidebar.multiselect("Kategorie produktów", data["Category"].unique(), data["Category"].unique(), placeholder=("wybierz"))
+category_filter = st.sidebar.multiselect("Kategorie produktów", data["Category"].unique(), data["Category"].unique())
 name_filter = st.sidebar.multiselect("Nazwa produktów", data["Item Purchased"].unique(), data["Item Purchased"].unique())
 
 # Filtruj dane
 filtered_data = data[(data["Age"] >= age_filter[0]) & 
                      (data["Age"] <= age_filter[1]) & 
+                     (data["Purchase Ammount (USD)"] >= price_filter[0]) & 
+                     (data["Purchase Ammount (USD)"] <= price_filter[1]) & 
                      (data["Gender"].isin(gender_filter)) & 
                      (data["Category"].isin(category_filter)) &
                      (data["Item Purchased"].isin(name_filter))]
