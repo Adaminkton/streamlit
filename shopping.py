@@ -61,6 +61,11 @@ st.write("### Liczba kupionych prodkutów według nazwy")
 counts = filtered_data["Item Purchased"].value_counts()
 st.write("counts: ", counts)
 fig, ax = plt.subplots()
-#ax.pie(counts, labels=filtered_data["Item Purchased"].unique())
-counts.plot(kind="pie", ax=ax, autopct=absolute_value)
+def make_autopct(counts):
+    def my_autopct(pct):
+        total = sum(counts)
+        val = int(round(pct*total/100.0))
+        return '{p:.2f}%  ({v:d})'.format(p=pct,v=val)
+    return my_autopct
+counts.plot(kind="pie", ax=ax, autopct=make_autopct(counts))
 st.pyplot(fig)
