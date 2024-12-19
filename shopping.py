@@ -74,5 +74,5 @@ st.pyplot(fig)
 
 counts_genders = filtered_data["Gender"].value_counts()
 fig, ax = plt.subplots()
-counts_genders.pie(kind="pie" autopct='%1.1f%%')
+counts_genders.pie(kind="pie", autopct='%1.1f%%')
 st.pyplot(fig)
