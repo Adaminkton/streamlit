@@ -63,5 +63,5 @@ st.write("counts: ", counts)
 fig, ax = plt.subplots()
 labels = filtered_data["Item Purchased"].unique()
 #ax.pie(counts, labels=filtered_data["Item Purchased"].unique())
-iltered_data["Item Purchased"].unique().pie()
+filtered_data["Item Purchased"].unique().pie()
 
