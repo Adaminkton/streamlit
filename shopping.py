@@ -59,6 +59,6 @@ st.pyplot(fig)
 # Wykres 4: Liczba zakupów wg nazwy produktu
 st.write("### Liczba kupionych prodkutów według nazwy")
 counts = filtered_data["Item Purchased"].value_counts()
-st.write("counts: ", filtered_data["Item Purchased"].unique)
+st.write("counts: ", filtered_data["Item Purchased"].unique())
 fig, ax = plt.subplots()
-ax.pie(counts, filtered_data["Item Purchased"], autopct='%1.1f%%')
+ax.pie(counts, filtered_data["Item Purchased"].unique(), autopct='%1.1f%%')
