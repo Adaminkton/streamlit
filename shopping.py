@@ -21,7 +21,7 @@ name_filter = st.sidebar.multiselect("Nazwa produktów", data["Item Purchased"].
 # Filtruj dane
 filtered_data = data[(data["Age"] >= age_filter[0]) & 
                      (data["Age"] <= age_filter[1]) & 
-                     (data["Category"].isin(category_filter))] &
+                     (data["Category"].isin(category_filter)) &
                      (data["Item Purchased"].isin(name_filter))]
 
 # Wyświetlanie danych
