@@ -101,10 +101,9 @@ fig, ax = plt.subplots()
 
 bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
-avg.plot(kind="bar"
+avg.plot(kind="bar", ax=ax)
 
-ax.set_ylabel('fruit supply')
-ax.set_title('Fruit supply by kind and color')
-ax.legend(title='Fruit color')
+ax.set_xlabel("Płeć")
+ax.set_ylabel("Cena średnia")
 
 st.pyplot(fig)
