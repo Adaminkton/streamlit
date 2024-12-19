@@ -71,6 +71,7 @@ counts_names.plot(kind="pie", autopct=make_autopct(counts_names))
 st.pyplot(fig)
 
 # Wykres 5: Liczba zakupów według płci:
+st.write("### Liczba kupionych prodkutów według płci")
 
 counts_genders = filtered_data["Gender"].value_counts()
 fig, ax = plt.subplots()
