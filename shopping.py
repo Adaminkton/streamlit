@@ -90,9 +90,9 @@ st.write("### Ceny zakupów według płci")
 male_data = filtered_data[ (filtered_data["Gender"].str.contains("Male"))]
 female_data = filtered_data[ (filtered_data["Gender"].str.contains("Female"))]
 avg_male = sum(male_data["Purchase Amount (USD)"]) / len(male_data["Purchase Amount (USD)"])
-st.write("Średnia cena zakupów dla męszczyzn:", avg_male)
+st.write("Średnia cena zakupów dla mężczyzn:", avg_male)
 
-avg_male = sum(female_data["Purchase Amount (USD)"]) / len(female_data["Purchase Amount (USD)"])
+avg_famele = sum(female_data["Purchase Amount (USD)"]) / len(female_data["Purchase Amount (USD)"])
 st.write("Średnia cena zakupów dla kobiet:", avg_famele)
 
 fig, ax = plt.subplots()
