@@ -98,7 +98,5 @@ st.write("Średnia cena zakupów dla kobiet:", avg_famele)
 y = np.array([avg_male,avg_famele])
 x = np.array(["mężczyzna","kobieta"])
 bar_colors = ['tab:red', 'tab:blue']
-fig, ax = plt.subplots()
-y.plot(ax=y,color=bar_colors)
-
-st.pyplot(fig)
+plt.bar(x,y,color=bar_colors)
+plt.show()
