@@ -67,5 +67,5 @@ def make_autopct(counts):
         val = int(round(pct*total/100.0))
         return '{p:.2f}%  ({v:d})'.format(p=pct,v=val)
     return my_autopct
-counts.plot(kind="pie", labels=count, sautopct=make_autopct(counts))
+counts.plot(kind="pie", labels=counts, sautopct=make_autopct(counts))
 st.pyplot(fig)
