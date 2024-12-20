@@ -22,11 +22,11 @@ category_filter = st.sidebar.multiselect("Kategorie produktów", options=data["C
 name_filter = st.sidebar.multiselect("Nazwa produktów", options=data["Item Purchased"].unique(), placeholder="Wybierz nazwę produktów")
 
 if category_filter and name_filter is None:
-     st.error("Proszę wybrać przynajmniej jedną kategorię produktów i nazwę produktu.", icon="🚨")
+    st.error("Proszę wybrać przynajmniej jedną kategorię produktów i nazwę produktu.", icon="🚨")
 else if category_filter is None:
-         st.error("Proszę wybrać przynajmniej jedną kategorię produktów.", icon="🚨")
+    st.error("Proszę wybrać przynajmniej jedną kategorię produktów.", icon="🚨")
 else if name_filter:
-             st.error("Proszę wybrać przynajmniej jedną nazwę produktu.", icon="🚨")
+    st.error("Proszę wybrać przynajmniej jedną nazwę produktu.", icon="🚨")
 else:
     # Filtruj dane
     filtered_data = data[(data["Age"] >= age_filter[0]) & 
@@ -112,5 +112,3 @@ else:
     fig, ax = plt.subplots()
     ax.bar(x,y,label=y, color=bar_colors)
     st.pyplot(fig)
-else if category_filter :
-
