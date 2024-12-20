@@ -108,4 +108,4 @@ if category_filter and name_filter is not None:
     ax.bar(x,y,label=y, color=bar_colors)
     st.pyplot(fig)
 else:
- st.show("Proszę wybrać przynajmniej jedną kategorię produktów.")
+ st.write("Proszę wybrać przynajmniej jedną kategorię produktów.")
