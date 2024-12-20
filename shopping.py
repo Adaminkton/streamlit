@@ -21,11 +21,11 @@ gender_filter = st.sidebar.multiselect("Płeć", data["Gender"].unique(), data["
 category_filter = st.sidebar.multiselect("Kategorie produktów", options=data["Category"].unique(), placeholder="Wybierz kategorie produktów")
 name_filter = st.sidebar.multiselect("Nazwa produktów", options=data["Item Purchased"].unique(), placeholder="Wybierz nazwę produktów")
 
-if category_filter and name_filter is None:
+if category_filter and name_filter is None
     st.error("Proszę wybrać przynajmniej jedną kategorię produktów i nazwę produktu.", icon="🚨")
-else if category_filter is None:
+else: if category_filter is None
     st.error("Proszę wybrać przynajmniej jedną kategorię produktów.", icon="🚨")
-else if name_filter:
+else: if name_filter:
     st.error("Proszę wybrać przynajmniej jedną nazwę produktu.", icon="🚨")
 else:
     # Filtruj dane
