@@ -99,5 +99,5 @@ y = np.array([avg_male,avg_famele])
 x = np.array(["mężczyzna","kobieta"])
 bar_colors = ['tab:red', 'tab:blue']
 fig, ax = plt.subplots()
-ax.bar(x,y,color=bar_colors)
+ax.bar(x,y, labels=y, color=bar_colors)
 st.pyplot(fig)
