@@ -21,8 +21,7 @@ gender_filter = st.sidebar.multiselect("Płeć", data["Gender"].unique(), data["
 category_filter = st.sidebar.multiselect("Kategorie produktów", options=data["Category"].unique(), placeholder="Wybierz kategorie produktów")
 name_filter = st.sidebar.multiselect("Nazwa produktów", options=data["Item Purchased"].unique(), placeholder="Wybierz nazwę produktów")
 
-st.write(category_filter)
-
+#Blokada nie wybrania kategori i nazwy
 if not category_filter and not name_filter:
     st.error("Proszę wybrać przynajmniej jedną kategorię produktów i nazwę produktu.", icon="🚨")
 elif not category_filter:
