@@ -18,8 +18,8 @@ st.sidebar.title("Opcje analizy")
 age_filter = st.sidebar.slider("Wiek klienta", int(data["Age"].min()), int(data["Age"].max()), (18, 70))
 price_filter = st.sidebar.slider("Cena", int(data["Purchase Amount (USD)"].min()), int(data["Purchase Amount (USD)"].max()), (0, 100))
 gender_filter = st.sidebar.multiselect("Płeć", data["Gender"].unique(), data["Gender"].unique())
-category_filter = st.sidebar.multiselect("Kategorie produktów", data["Category"].unique(), data["Category"].unique())
-name_filter = st.sidebar.multiselect("Nazwa produktów", data["Item Purchased"].unique(), data["Item Purchased"].unique())
+category_filter = st.sidebar.multiselect("Kategorie produktów", options=data["Category"].unique(), placeholder="Wybierz kategorie produktów")
+name_filter = st.sidebar.multiselect("Nazwa produktów", options=data["Item Purchased"].unique(), placeholder="Wybierz nazwę produktów")
 
 # Filtruj dane
 filtered_data = data[(data["Age"] >= age_filter[0]) & 
