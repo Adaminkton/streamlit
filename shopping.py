@@ -23,11 +23,11 @@ name_filter = st.sidebar.multiselect("Nazwa produktów", options=data["Item Purc
 
 st.write(category_filter)
 
-if category_filter and name_filter is None:
+if not category_filter and not name_filter:
     st.error("Proszę wybrać przynajmniej jedną kategorię produktów i nazwę produktu.", icon="🚨")
-elif category_filter is None:
+elif not category_filter:
     st.error("Proszę wybrać przynajmniej jedną kategorię produktów.", icon="🚨")
-elif name_filter is None:
+elif not name_filter:
     st.error("Proszę wybrać przynajmniej jedną nazwę produktu.", icon="🚨")
 else:
     # Filtruj dane
